@@ -9,6 +9,8 @@ import arcade
 import math
 import random
 from abc import ABC, abstractmethod
+import os
+os.chdir("/Users/ashleyzufelt/Desktop/GitHub/python/asteroids/images/") 
 
 # These are Global constants to use throughout the game
 SCREEN_WIDTH = 800
@@ -34,7 +36,7 @@ MEDIUM_ROCK_RADIUS = 5
 SMALL_ROCK_SPIN = 5
 SMALL_ROCK_RADIUS = 2
 
-TEXT_COLOR =arcade.color.WHITE
+TEXT_COLOR =arcade.color.BLACK
 ROCK_START_SPOT = SCREEN_WIDTH / 5
 # SHIP_LIVES = 3
 """
@@ -121,7 +123,7 @@ class Large(Flying_Objects):
         Attributes for LARGE asteroid
         """
         def __init__(self):
-          super().__init__('week9/asteroids/images/meteorGrey_big1.png')
+          super().__init__('meteorGrey_big1.png')
 
           
           #lets asteroids start in various random spot, but stay on left edge of window
@@ -171,7 +173,7 @@ class Medium(Flying_Objects):
         Attributes for MEDIUM asteroid
         """
         def __init__(self):
-            super().__init__("week9/asteroids/images/meteorGrey_med1.png")
+            super().__init__("meteorGrey_med1.png")
             self.radius = MEDIUM_ROCK_RADIUS
 
         def advance(self):
@@ -203,7 +205,7 @@ class Small(Flying_Objects):
         Attributes for SMALL asteroid
         """
         def __init__(self):
-            super().__init__("week9/asteroids/images/meteorGrey_small1.png")
+            super().__init__("meteorGrey_small1.png")
             self.radius = SMALL_ROCK_RADIUS
 
         def advance(self):
@@ -218,7 +220,7 @@ class Ship(Flying_Objects):
         Attributes to initialize a ship
         """
         def __init__(self):
-            super().__init__('week9/asteroids/images/playerShip1_orange.png')
+            super().__init__('playerShip1_orange.png')
 
             self.angle = SHIP_TURN_AMOUNT
             self.center.x = (SCREEN_WIDTH/2)
@@ -251,7 +253,7 @@ class Bullet(Flying_Objects):
         Contains attributes to create bullets
         """
         def __init__(self, ship_angle, ship_x, ship_y):
-            super().__init__('week9/asteroids/images/laserBlue01.png')
+            super().__init__('laserBlue01.png')
 
             self.radius = BULLET_RADIUS
             self.speed = BULLET_SPEED
@@ -276,7 +278,7 @@ class Message():
         self.message = 'Game Over. Press Enter to play again?'
 
     def draw(self):
-        arcade.draw_text(self.message, SCREEN_WIDTH // 5, SCREEN_HEIGHT // 2, arcade.color.BLACK, 20)
+        arcade.draw_text(self.message, SCREEN_WIDTH // 5, SCREEN_HEIGHT // 2, arcade.color.WHITE, 20)
 
     def restart(self):
         print("in the restart function")
@@ -300,7 +302,7 @@ class Game(arcade.Window):
         :param height: Screen height
         """
         super().__init__(width, height)
-        arcade.set_background_color(arcade.color.WHITE)
+        arcade.set_background_color(arcade.color.BLACK)
 
 
         self.game_over = False

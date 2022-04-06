@@ -6,13 +6,14 @@ Designed to be completed by others
 
 This program implements an awesome version of skeet.
 """
+
 import arcade
 import math
 import random
 from abc import ABC
 from abc import abstractmethod
-
- 
+import os
+os.chdir("/Users/ashleyzufelt/Desktop/GitHub/python/skeet/") 
 
 # These are Global constants to use throughout the game
 SCREEN_WIDTH = 800
@@ -130,7 +131,7 @@ class Standard(Target):
 
     def draw(self):
       # use arcade load texture to display custom sprite
-      texture = arcade.load_texture("week7/skeet/meteor.png")
+      texture = arcade.load_texture("meteor.png")
       arcade.draw_texture_rectangle(self.center.x, self.center.y, self.scale * texture.width, self.scale * texture.height, texture)
       # REPLACED standard circle with a sprite
       #  arcade.draw_circle_filled(self.center.x, self.center.y, self.radius, self.color)
@@ -159,7 +160,7 @@ class Strong(Target):
     def draw(self):
     
       # use arcade load texture to display custom sprite
-      texture = arcade.load_texture("week7/skeet/invader.png") 
+      texture = arcade.load_texture("invader.png") 
       
       arcade.draw_texture_rectangle(self.center.x, self.center.y, self.scale * texture.width, self.scale * texture.height, texture)
 
@@ -198,7 +199,7 @@ class Boss(Target):
         
     def draw(self):
         # use arcade load texture to display custom sprite
-        texture = arcade.load_texture("week7/skeet/boss.png")
+        texture = arcade.load_texture("boss.png")
         arcade.draw_texture_rectangle(self.center.x, self.center.y, self.scale * texture.width, self.scale * texture.height, texture)
 
     def hit(self):
@@ -228,7 +229,7 @@ class Safe(Target):
 
     def draw(self):
       # use arcade load texture to display custom sprite
-      texture = arcade.load_texture("week7/skeet/satellite.png")
+      texture = arcade.load_texture("satellite.png")
       scale = .7
       arcade.draw_texture_rectangle(self.center.x, self.center.y, scale * texture.width, scale * texture.height, texture)
 
@@ -250,7 +251,7 @@ class Rifle:
 
     def draw(self):
       # use arcade load texture to display custom sprite
-      texture = arcade.load_texture("week7/skeet/rocket.png")
+      texture = arcade.load_texture("rocket.png")
       scale = 1.5
       arcade.draw_texture_rectangle(self.center.x, self.center.y, scale * texture.width, scale * texture.height, texture, self.angle - 90)
 
@@ -301,7 +302,7 @@ class Game(arcade.Window):
 
     def setup(self):
         """Background image"""
-        self.background = arcade.load_texture('week7/skeet/space-sky.jpg')
+        self.background = arcade.load_texture('space-sky.jpg')
 
     def on_draw(self):
         """

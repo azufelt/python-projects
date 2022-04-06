@@ -11,7 +11,7 @@ import os # Used to change the directory to the right place
 import numpy as np
 import math
 
-os.chdir("/Users/ashleyzufelt/Desktop/Pathway Homework/Winter 2022/Obj Oriented Prog /hello/week13/nba_basketball_data/")
+os.chdir("/Users/ashleyzufelt/Desktop/GitHub/python/nba_basketball_data/")
 
 """
 Starting Data
